@@ -1,3 +1,14 @@
+$bg-color: #282c34;
+$color-one: #f3f3f3;
+
+body {
+  background-color: $bg-color;
+  color: $color-one;
+}
+h3 {
+  margin: 8px;
+  text-shadow: 2px 2px green;
+}
 .App {
   text-align: center;
 }
@@ -9,18 +20,27 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-color: $bg-color;
+  min-height: 20vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: $color-one;
 }
 
 .App-link {
   color: #61dafb;
+}
+
+.btn {
+  margin: 18px;
+  padding: 8px;
+  border-radius: 4px;
+  color: $color-one;
+  font-weight: bold;
+  background-color: purple;
 }
 
 @keyframes App-logo-spin {
