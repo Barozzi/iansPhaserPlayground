@@ -50,9 +50,7 @@ class DefenderComponent extends Component {
       this.load.image('bigStar', 'assets/star3.png');
       this.load.image('ship', 'assets/shmup-ship2.png');
       this.load.image('bullet', 'assets/bullet6.png');
-      const jets = this.load.image('jets', 'assets/blue.png');
-      jets.scaleX = .02;
-      jets.scaleY = .02;
+      this.load.image('jets', 'assets/blue.png');
       this.load.image('flares', 'assets/yellow.png');
       this.load.spritesheet('face', 'assets/metalface78x92.png', {
         frameWidth: 78,
@@ -272,7 +270,7 @@ class DefenderComponent extends Component {
 
       var landscape = this.add.graphics();
 
-      landscape.fillStyle(0x008800, 1);
+      landscape.fillStyle(0x879ebc, 1);
       landscape.lineStyle(2, 0x00ff00, 1);
 
       landscape.beginPath();

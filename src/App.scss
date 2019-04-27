@@ -5,8 +5,13 @@ body {
   background-color: $bg-color;
   color: $color-one;
 }
+canvas {
+  margin: 0 auto;
+  display: block;
+}
 h3 {
   margin: 8px;
+  font-size: 3rem;
   text-shadow: 2px 2px green;
 }
 .the-game {
