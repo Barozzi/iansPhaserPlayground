@@ -8,28 +8,32 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentGame: GAMES.surfDemo,
+      currentGame: GAMES.demo,
     }
     this.setGamePandaDemo = this.setGamePandaDemo.bind(this);
     this.setGameSurfDemo = this.setGameSurfDemo.bind(this);
+    this.setGameDefender = this.setGameDefender.bind(this);
   }
   setGamePandaDemo() {
-    console.log('load panda')
     this.setState(Object.assign({}, this.state, {currentGame: GAMES.demo}))
   }
   setGameSurfDemo() {
-    console.log('load surfer')
     this.setState(Object.assign({}, this.state, {currentGame: GAMES.surfDemo}))
   }
+  setGameDefender() {
+    this.setState(Object.assign({}, this.state, {currentGame: GAMES.defender}))
+  }
+
+
   render() {
     return (
       <div className="App">
         <header className="App-header">
           <h2>Ian's Awesome Games</h2>
-          {this.state.currentGame}
           <div className="button-bar">
             <Button className="btn" onClick={this.setGamePandaDemo} text={GAMES.demo} />
             <Button className="btn" onClick={this.setGameSurfDemo} text={GAMES.surfDemo} />
+            <Button className="btn" onClick={this.setGameDefender} text={GAMES.defender} />
           </div>
         </header>
         <GameLoader currentGame={this.state.currentGame} />
