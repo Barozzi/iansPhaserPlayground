@@ -5,6 +5,7 @@ import './App.scss';
 
 
 class App extends Component {
+
   constructor(props) {
     super(props);
     this.state = {
@@ -13,7 +14,9 @@ class App extends Component {
     this.setGamePandaDemo = this.setGamePandaDemo.bind(this);
     this.setGameSurfDemo = this.setGameSurfDemo.bind(this);
     this.setGameDefender = this.setGameDefender.bind(this);
+    this.setGameMassAttack = this.setGameMassAttack.bind(this);
   }
+
   setGamePandaDemo() {
     this.setState(Object.assign({}, this.state, {currentGame: GAMES.demo}))
   }
@@ -22,6 +25,9 @@ class App extends Component {
   }
   setGameDefender() {
     this.setState(Object.assign({}, this.state, {currentGame: GAMES.defender}))
+  }
+  setGameMassAttack() {
+    this.setState(Object.assign({}, this.state, {currentGame: GAMES.massAttack}))
   }
 
 
@@ -34,6 +40,7 @@ class App extends Component {
             <Button className="btn" onClick={this.setGamePandaDemo} text={GAMES.demo} />
             <Button className="btn" onClick={this.setGameSurfDemo} text={GAMES.surfDemo} />
             <Button className="btn" onClick={this.setGameDefender} text={GAMES.defender} />
+            <Button className="btn" onClick={this.setGameMassAttack} text={GAMES.massAttack} />
           </div>
         </header>
         <GameLoader currentGame={this.state.currentGame} />
