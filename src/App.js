@@ -15,6 +15,7 @@ class App extends Component {
     this.setGameSurfDemo = this.setGameSurfDemo.bind(this);
     this.setGameDefender = this.setGameDefender.bind(this);
     this.setGameMassAttack = this.setGameMassAttack.bind(this);
+    this.setGameFlood = this.setGameFlood.bind(this);
   }
 
   setGamePandaDemo() {
@@ -29,6 +30,9 @@ class App extends Component {
   setGameMassAttack() {
     this.setState(Object.assign({}, this.state, {currentGame: GAMES.massAttack}))
   }
+  setGameFlood() {
+    this.setState(Object.assign({}, this.state, {currentGame: GAMES.flood}))
+  }
 
 
   render() {
@@ -41,6 +45,7 @@ class App extends Component {
             <Button className="btn" onClick={this.setGameSurfDemo} text={GAMES.surfDemo} />
             <Button className="btn" onClick={this.setGameDefender} text={GAMES.defender} />
             <Button className="btn" onClick={this.setGameMassAttack} text={GAMES.massAttack} />
+            <Button className="btn" onClick={this.setGameFlood} text={GAMES.flood} />
           </div>
         </header>
         <GameLoader currentGame={this.state.currentGame} />

@@ -3,12 +3,14 @@ import DemoComponent from './demoComponent'
 import DemoComponentTwo from './demoComponentTwo'
 import DefenderComponent from './defenderComponent'
 import MassAttackComponent from './massAttackComponent'
+import FloodComponent from './floodComponent'
 
 export const GAMES = {
   demo: 'PANDA DEMO',
   surfDemo: 'SURF DEMO',
   defender: 'DEFENDER',
   massAttack: 'MASS ATTACK',
+  flood: 'FLOOD',
 }
 
 class GameLoader extends Component {
@@ -27,6 +29,9 @@ class GameLoader extends Component {
         break;
       case GAMES.massAttack:
         gameComponent = <MassAttackComponent />
+        break;
+      case GAMES.flood:
+        gameComponent = <FloodComponent />
         break;
       default:
         gameComponent = <DemoComponent />
