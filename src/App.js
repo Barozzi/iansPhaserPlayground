@@ -8,9 +8,7 @@ class App extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {
-      currentGame: GAMES.demo,
-    }
+    this.state = { currentGame: GAMES.demo };
     this.setGame = this.setGame.bind(this);
   }
 
@@ -25,11 +23,19 @@ class App extends Component {
           <h2>Ian's Awesome Games</h2>
           <div className="button-bar">
             {Object.values(GAMES).map(game => (
-              <Button id={ game.name } className='btn' onClick={ () => this.setGame(game) } text={ game.name } />
+
+              <Button 
+                key={ game.name } 
+                id={ game.name } 
+                className='btn' 
+                onClick={ () => this.setGame(game) }
+                text={ game.name } 
+              />
+
             ))}
           </div>
         </header>
-          <GameLoader currentGame={this.state.currentGame} />
+        <GameLoader currentGame={this.state.currentGame} />
       </div>
     );
   }
