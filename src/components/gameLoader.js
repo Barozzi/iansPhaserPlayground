@@ -6,40 +6,33 @@ import MassAttackComponent from './massAttackComponent'
 import FloodComponent from './floodComponent'
 
 export const GAMES = {
-  demo: 'PANDA DEMO',
-  surfDemo: 'SURF DEMO',
-  defender: 'DEFENDER',
-  massAttack: 'MASS ATTACK',
-  flood: 'FLOOD',
+  demo: {
+    name: 'PANDA DEMO',
+    component: <DemoComponent />
+  },
+  surfDemo: {
+    name: 'SURF DEMO',
+    component: <DemoComponentTwo />
+  },
+  defender: {
+    name: 'DEFENDER',
+    component: <DefenderComponent />
+  },
+  massAttack: {
+    name: 'MASS ATTACK',
+    component: <MassAttackComponent />
+  },
+  flood: {
+    name: 'FLOOD',
+    component: <FloodComponent />
+  },
 }
 
 class GameLoader extends Component {
   render () {
-    let gameComponent;
-
-     switch (this.props.currentGame) {
-      case GAMES.demo:
-        gameComponent = <DemoComponent />
-        break;
-      case GAMES.surfDemo:
-        gameComponent = <DemoComponentTwo />
-        break;
-      case GAMES.defender:
-        gameComponent = <DefenderComponent />
-        break;
-      case GAMES.massAttack:
-        gameComponent = <MassAttackComponent />
-        break;
-      case GAMES.flood:
-        gameComponent = <FloodComponent />
-        break;
-      default:
-        gameComponent = <DemoComponent />
-    }
-
     return(
       <div className="the-game">
-        {gameComponent}
+        {this.props.currentGame.component}
       </div>
     )
   }
